@@ -11,11 +11,21 @@ class TrackingController < ApplicationController
   end
 
   def start
-    @time_clock = TimeClock.new
-    @time_clock.start(current_user)
-    if @time_clock.save
-      redirect_to tracking_path, :notice => "Tracking started."
+    notice_message = ""
+    @time_clocks = TimeClock.where(:user => current_user)
+    @time_clocks.each do |clock|
+      if clock.active
+        notice_message = "You already have an active timer."
+      end
     end
+
+    if notice_message.blank?
+      notice_message = "New timer created."
+      time_clock = TimeClock.new
+      time_clock.start(current_user)
+    else
+    end
+    redirect_to tracking_path, :notice => notice_message
   end
 
   def stop
