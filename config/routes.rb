@@ -1,4 +1,15 @@
 CodeJikan::Application.routes.draw do
+  # You can use this syntax to get a controller/action
+  # So, if you want to do the welcome index action it would be
+  # get "welcome/index"
+  #
+  # But, you can also do resources if you have a standard CRUD model
+  # So, if you have a User model, you should be able to Create Read Update or Delete them (C.R.U.D.)
+  # So that would just be
+  # resources :users
+  # and now rails would have 5 actions for users
+  # When you scaffold a model, you get a standard CRUD model
+
   get "static_pages/home"
   get "static_pages/about"
   get "static_pages/shop"
@@ -11,6 +22,17 @@ CodeJikan::Application.routes.draw do
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
+  #       post 'toggle'
+  #     end
+  #     collection do
+  #       get 'sold'
+  #     end
+  #   end
+
+  # Example resource route with sub-resources:
+  #   resources :products do
+  #     resources :comments, :sales
+  #     resource :seller
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
@@ -22,18 +44,6 @@ CodeJikan::Application.routes.draw do
   #   resources :products do
   #     member do
   #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
-
-  # Example resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
   #   end
 
   # Example resource route with more complex sub-resources:
