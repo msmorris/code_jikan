@@ -17,6 +17,10 @@ gem 'awesome_print'
 gem 'better_errors'
 gem 'binding_of_caller'
 
+# 12 factor for heroku
+gem 'rails_12factor', group: :production
+
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
