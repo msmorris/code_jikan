@@ -3,12 +3,19 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.3'
 
+#Use to add some style to the application
+gem 'bootstrap-sass'
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3'
 gem 'pg'
 
 # Use Devise for Users
 gem 'devise'
+
+# Rails Debugging
+gem 'awesome_print'
+gem 'better_errors'
+gem 'binding_of_caller'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'

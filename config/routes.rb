@@ -1,4 +1,8 @@
 CodeJikan::Application.routes.draw do
+  get "/tracking", to: "tracking#index", as: "tracking"
+  get "/start_timer", to: "tracking#start", as: "start"
+  get "/stop_timer/:id", to: "tracking#stop", as: "stop"
+
   get "static_pages/home"
   get "static_pages/about"
   get "static_pages/shop"
@@ -8,6 +12,10 @@ CodeJikan::Application.routes.draw do
 
   # Add Devise Routing
   devise_for :users, path: "auth", path_names: { sign_in: 'login', sign_out: 'logout', password: 'secret', confirmation: 'verification', unlock: 'unblock', registration: 'register', sign_up: 'sign_up' }
+  resources :users do
+    resources :time_clocks
+  end
+  resources :time_clocks
 
   # You can have the root of your site routed with "root"
   root 'welcome#index'

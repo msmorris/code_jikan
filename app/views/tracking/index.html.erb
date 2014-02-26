@@ -1,0 +1,11 @@
+<h1>Time Tracking</h1>
+  <% if @active %>
+    <%= link_to "Stop Timer", stop_path(@active) %>
+  <% else %>
+    <%=link_to "New Timer", start_path %>
+  <% end %>
+<ul>
+  <% @time_clocks.each do |time_clock| %>
+    <li><%=duration(time_clock) %></li>
+  <% end %>
+</ul>

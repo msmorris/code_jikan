@@ -1,0 +1,14 @@
+<%= form_for(@time_clock) do |f| %>
+  <div class="field">
+    <%= f.label :started %>
+    <%= f.datetime_select :started %>
+  </div>
+  <div class="field">
+    <%= f.label :ended %>
+    <%= f.datetime_select :ended %>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Create Entry" %>
+  </div>
+<% end %>
