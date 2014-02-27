@@ -1,12 +1,13 @@
 source 'https://rubygems.org'
+source 'https://rails-assets.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.3'
 
-#Use to add some style to the application
-gem 'bootstrap-sass'
-# Use sqlite3 as the database for Active Record
-#gem 'sqlite3'
+# Use to add some style to the application
+gem 'rails-assets-bootstrap'
+
+# database
 gem 'pg'
 
 # Use Devise for Users

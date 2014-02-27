@@ -1,11 +1,15 @@
 <h1>Time Tracking</h1>
+<br />
+<div class="col-md-6">
+  <ul class="entry well">
+    <% @time_clocks.each do |time_clock| %>
+      <li><%=duration(time_clock) %></li>
+    <% end %>
+  </ul>
+  <br />
   <% if @active %>
-    <%= link_to "Stop Timer", stop_path(@active) %>
+    <%= link_to "Stop Timer", stop_path(@active), :class => "btn btn-primary" %>
   <% else %>
-    <%=link_to "New Timer", start_path %>
+    <%=link_to "New Timer", start_path, :class => "btn btn-primary" %>
   <% end %>
-<ul>
-  <% @time_clocks.each do |time_clock| %>
-    <li><%=duration(time_clock) %></li>
-  <% end %>
-</ul>
+</div>
