@@ -24,6 +24,8 @@ module TrackingHelper
     hours = amount.inject { |sum, x| sum + x }
 
     # Let's earn $40 per hour.
-    "$#{number_with_precision((hours * 40), precision: 2)} earned at $40 per hour."
+    if hours
+      "$#{number_with_precision((hours * 40), precision: 2)} earned at $40 per hour."
+    end
   end
 end
