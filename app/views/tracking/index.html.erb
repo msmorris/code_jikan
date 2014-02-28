@@ -5,6 +5,8 @@
     <% @time_clocks.each do |time_clock| %>
       <li><%=duration(time_clock) %></li>
     <% end %>
+    <br/>
+    <li><%=earned_amount(@time_clocks) %></li>
   </ul>
   <br />
   <% if @active %>

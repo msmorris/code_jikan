@@ -12,4 +12,18 @@ module TrackingHelper
       "Active Timer Running"
     end
   end
+
+  def earned_amount(time_clocks)
+    amount = []
+    time_clocks.each do |clock|
+      if clock.ended
+        amount << ((clock.ended - clock.started) / 1.hour)
+      end
+    end
+
+    hours = amount.inject { |sum, x| sum + x }
+
+    # Let's earn $40 per hour.
+    "$#{number_with_precision((hours * 40), precision: 2)} earned at $40 per hour."
+  end
 end
